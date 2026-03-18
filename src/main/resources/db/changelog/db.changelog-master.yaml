@@ -5,3 +5,5 @@ databaseChangeLog:
       file: db/changelog/migrations/02-create-refresh-tokens-table.yaml
   - include:
       file: db/changelog/migrations/03-seed-admin-user.yaml
+  - include:
+      file: db/changelog/migrations/04-rename-password-column.yaml
