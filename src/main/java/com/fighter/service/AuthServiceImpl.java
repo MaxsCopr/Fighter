@@ -22,7 +22,7 @@ public class AuthServiceImpl implements AuthService{
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
-    private final AuthenticationManager authenticationManager;
+    //private final AuthenticationManager authenticationManager;
 
     @Override
     @Transactional

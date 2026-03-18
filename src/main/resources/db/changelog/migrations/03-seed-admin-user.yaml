@@ -34,7 +34,7 @@ databaseChangeLog:
                   valueBoolean: true
               - column:
                   name: created_at
-                  valueDate: now()
+                  valueDate: SYSDATE
               - column:
                   name: updated_at
-                  valueDate: now()
+                  valueDate: SYSDATE
