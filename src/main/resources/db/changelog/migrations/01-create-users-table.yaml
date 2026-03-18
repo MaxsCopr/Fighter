@@ -72,10 +72,3 @@ databaseChangeLog:
               - column:
                   name: last_login_at
                   type: TIMESTAMP
-        - createIndex:
-            indexName: idx_users_email
-            tableName: users
-            unique: true
-            columns:
-              - column:
-                  name: email
