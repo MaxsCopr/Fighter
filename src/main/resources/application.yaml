@@ -29,3 +29,10 @@ spring:
 
   scheduling:
     enabled: true
+
+jwt:
+  secret: ${JWT_SECRET:KrgKgIge3IBLqxZhs47sZyivqYZz5t6UjXf0/D1ezeQ=}
+  access-token:
+    expiry: ${JWT_ACCESS_TOKEN_EXPIRY:900000}
+  refresh-token:
+    expiry: ${JWT_REFRESH_TOKEN_EXPIRY:604800000}
