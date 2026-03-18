@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 03-seed-admin-user
+      author: auth-service
+      context: dev,staging
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: full_name
+                  value: Super Admin
+              - column:
+                  name: email
+                  value: admin@example.com
+              - column:
+                  # BCrypt hash of "Admin@1234"
+                  name: password
+                  value: $2a$12$WjuBbMxGM4lTdgH3qL1UUuN4YzH0FbO0xO6XJqFz2QK8F6rBdNjlW
+              - column:
+                  name: role
+                  value: ADMIN
+              - column:
+                  name: enabled
+                  valueBoolean: true
+              - column:
+                  name: account_non_locked
+                  valueBoolean: true
+              - column:
+                  name: account_non_expired
+                  valueBoolean: true
+              - column:
+                  name: credentials_non_expired
+                  valueBoolean: true
+              - column:
+                  name: created_at
+                  valueDate: now()
+              - column:
+                  name: updated_at
+                  valueDate: now()
