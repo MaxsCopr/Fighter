@@ -24,9 +24,6 @@ databaseChangeLog:
                   type: BIGINT
                   constraints:
                     nullable: false
-                    foreignKeyName: fk_refresh_tokens_user
-                    references: users(id)
-                    deleteCascade: true
               - column:
                   name: expires_at
                   type: TIMESTAMP
@@ -34,8 +31,8 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: revoked
-                  type: BOOLEAN
-                  defaultValueBoolean: false
+                  type: NUMBER(1)
+                  defaultValueNumeric: 0
                   constraints:
                     nullable: false
               - column:
@@ -43,6 +40,13 @@ databaseChangeLog:
                   type: TIMESTAMP
                   constraints:
                     nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: refresh_tokens
+            baseColumnNames: user_id
+            referencedTableName: users
+            referencedColumnNames: id
+            constraintName: fk_refresh_tokens_user
+            onDelete: CASCADE
         - createIndex:
             indexName: idx_refresh_token_value
             tableName: refresh_tokens
