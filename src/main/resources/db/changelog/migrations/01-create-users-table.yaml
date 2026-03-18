@@ -37,26 +37,26 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: enabled
-                  type: BOOLEAN
-                  defaultValueBoolean: true
+                  type: NUMBER(1)
+                  defaultValueNumeric: 1
                   constraints:
                     nullable: false
               - column:
                   name: account_non_locked
-                  type: BOOLEAN
-                  defaultValueBoolean: true
+                  type: NUMBER(1)
+                  defaultValueNumeric: 1
                   constraints:
                     nullable: false
               - column:
                   name: account_non_expired
-                  type: BOOLEAN
-                  defaultValueBoolean: true
+                  type: NUMBER(1)
+                  defaultValueNumeric: 1
                   constraints:
                     nullable: false
               - column:
                   name: credentials_non_expired
-                  type: BOOLEAN
-                  defaultValueBoolean: true
+                  type: NUMBER(1)
+                  defaultValueNumeric: 1
                   constraints:
                     nullable: false
               - column:
@@ -72,10 +72,3 @@ databaseChangeLog:
               - column:
                   name: last_login_at
                   type: TIMESTAMP
-        - createIndex:
-            indexName: idx_users_email
-            tableName: users
-            unique: true
-            columns:
-              - column:
-                  name: email
