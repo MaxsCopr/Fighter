@@ -48,6 +48,12 @@ databaseChangeLog:
             constraintName: fk_refresh_tokens_user
             onDelete: CASCADE
         - createIndex:
+            indexName: idx_refresh_token_value
+            tableName: refresh_tokens
+            columns:
+              - column:
+                  name: token
+        - createIndex:
             indexName: idx_refresh_token_user
             tableName: refresh_tokens
             columns:
